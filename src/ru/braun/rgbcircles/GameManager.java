@@ -7,9 +7,10 @@ import android.graphics.Paint;
  * Created by admin on 05.12.2015.
  */
 public class GameManager {
+   // private static int height;
     private CanvasView canvasView;
-    private int width;
-    private int height;
+    private static int width;
+    private static int height;
     private MainCircle mainCircle;
 
     public GameManager(CanvasView canvasView, int w, int h) {
@@ -19,7 +20,13 @@ public class GameManager {
         initMainCircle();
 
     }
+    public static int getHeight() {
+        return height;
+    }
 
+    public static int getWidth() {
+        return width;
+    }
 
     private void initMainCircle() {
         mainCircle = new MainCircle(width / 2, height / 2);
@@ -28,4 +35,10 @@ public class GameManager {
     public void onDraw() {
         canvasView.drawCircle(mainCircle);
     }
+
+    public void onTouchEvent(int x, int y) {
+        mainCircle.moveMainCircleWhenTouchAt(x, y);
+    }
+
+
 }
