@@ -5,4 +5,6 @@ package ru.braun.rgbcircles;
  */
 public interface ICanvasView {
     void drawCircle(SimpleCircle circle);
+
+    void redraw();
 }
