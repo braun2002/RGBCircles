@@ -6,8 +6,8 @@ package ru.braun.rgbcircles;
 public class SimpleCircle {
     protected int x;
     protected int y;
-    private int radius;
-    private int color;
+    protected int radius;
+    protected int color;
 
     public SimpleCircle(int x, int y, int radius) {
         this.x = x;
