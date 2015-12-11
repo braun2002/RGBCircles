@@ -6,7 +6,8 @@ package ru.braun.rgbcircles;
 public class SimpleCircle {
     protected int x;
     protected int y;
-    private int radius;
+    protected int radius;
+    protected int color;
 
     public SimpleCircle(int x, int y, int radius) {
         this.x = x;
@@ -26,4 +27,19 @@ public class SimpleCircle {
         return radius;
     }
 
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public SimpleCircle getCircleArea() {
+        return new SimpleCircle(x, y, radius * 3);
+    }
+
+    public boolean isIntersect(SimpleCircle circle) {
+        return radius + circle.radius >= Math.sqrt(Math.pow(x - circle.x, 2) + Math.pow(y - circle.y, 2));
+    }
 }
